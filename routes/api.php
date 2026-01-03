@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\FakultasController;
+use App\Http\Controllers\Api\ProdiController;
+use App\Http\Controllers\Api\DosenController;
+use App\Http\Controllers\Api\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+route::get('/fakultas',[FakultasController::class, 'index']);
+route::post('/fakultas',[FakultasController::class, 'store']);
+route::get('/prodi',[ProdiController::class, 'index']);
+route::post('/prodi',[ProdiController::class, 'store']);
+route::get('/dosen',[DosenController::class, 'index']);
+route::get('/mahasiswa',[MahasiswaController::class, 'index']);
